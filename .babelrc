@@ -1,0 +1,14 @@
+{
+  "presets": ["next/babel"],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "alias": {
+          "@app": "./app",
+          "@assets": "./public/assets"
+        }
+      }
+    ]
+  ]
+}
