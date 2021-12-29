@@ -13,8 +13,13 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
+    "paths": {
+      "@libs/*": ["./app/libs/*"],
+      "@app/*": ["./app/*"],
+      "@assets/*": ["./public/assets/*"],
+    },
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "app/features/auth/hooks/useAuth.tss"],
   "exclude": ["node_modules"]
 }
