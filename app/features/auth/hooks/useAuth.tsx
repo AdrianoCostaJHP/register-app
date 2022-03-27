@@ -20,6 +20,7 @@ import { useRouter } from 'next/router';
           maxAge: 86400,
           path: '/',
         })
+        router.push('/admin/dashboard')
 
         toast.success('Autenticado com sucesso!', {
           position: "top-right",
