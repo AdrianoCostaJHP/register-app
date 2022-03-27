@@ -1,9 +1,14 @@
 import { Box, Button, Flex } from "@chakra-ui/react"
+import { SubmitHandler } from "@unform/core"
 import { Form } from "@unform/web"
 import { colors } from "../../../common/theme/colors"
 import InputField from "../../molecules/InputField"
 
-const LoginForm = ({ onSubmit }) => {
+type LoginFormProps = {
+  onSubmit: SubmitHandler;
+}
+
+const LoginForm = ({ onSubmit }: LoginFormProps) => {
   
   return (
     <Flex flex={1}>
