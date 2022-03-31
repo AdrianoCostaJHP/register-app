@@ -1,0 +1,11 @@
+query getRegisteredTimes {
+  registeredTimes{
+    id
+    timeRegistered
+		user {
+			name
+			username
+		}
+		published_at
+  }
+}
