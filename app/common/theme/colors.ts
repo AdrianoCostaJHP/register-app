@@ -1,5 +1,6 @@
 export const colors = {
   primary: '#219653',
+  lightGreen:'#6FCF97',
   secondary: '#303030',
   white:'#FFFFFF',
   
@@ -8,6 +9,6 @@ export const colors = {
     100: '#A5A5A5',
     150: '#888888',
     200: '#7d7d7d',
-    
+    400: '#363636',
   }
 }
