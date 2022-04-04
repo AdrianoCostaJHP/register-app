@@ -31,13 +31,13 @@ const SideBar = () => {
               color={router.asPath === route.path ? 'primary' : 'grey.100'}
               direction="column"
             >
-              <Flex w="100%"  padding="1.5rem 0px" justifyContent="space-between" css={{
+              <Flex w="100%" padding="1.5rem 0px" justifyContent="space-between" css={{
                 ':before':{
                   content: '""',
+                  width: '4px',
+                  marginLeft:'1px',
                   ...(router.asPath === route?.path && {
-                    width: '4px',
                     height: '100%',
-                    marginLeft:'1px',
                     background:colors.primary,
                     borderRadius:'30px'
                   })
@@ -47,10 +47,10 @@ const SideBar = () => {
                 }
               }}>
                 <Link href={route?.path}>
-                  <Flex direction="column" alignItems="center" gap="0.5rem" padding="0.5rem 0px">
-                    <Img w="24px" h="24px" src={`/assets/${route?.icon}`} alt={`sideBar-${index}`}/>
-                    <Text flexWrap="wrap" fontSize="md" fontWeight="light">{route?.name}</Text>
-                  </Flex>
+                    <Flex direction="column" alignItems="center" gap="0.5rem" padding="0.5rem 0px">
+                      <Img w="24px" h="24px" src={`/assets/${route?.icon + (router.asPath === route.path ? "_active" : "")}.svg`} alt={`sideBar-${index}`}/>
+                      <Text flexWrap="wrap" fontSize="md" fontWeight="light">{route?.name}</Text>
+                    </Flex>
                 </Link>
               </Flex>
               <Divider w="80%" margin="0 auto"/>

@@ -2,11 +2,11 @@ export const routes = [
   {
     path: '/admin/dashboard',
     name:'Dashboard',
-    icon:'dashboard.svg'
+    icon:'dashboard'
   },
   {
-    path: '/admin/registers',
+    path: '/admin/register',
     name: 'Meus Registros',
-    icon:'note.svg'
+    icon:'note'
   }
 ]
