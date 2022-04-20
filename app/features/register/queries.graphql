@@ -1,11 +1,11 @@
-query getRegisteredTimes {
-  registeredTimes{
-    id
-    timeRegistered
+query getRegisteredTimes{
+	registeredTimes{
+		id
+		created_at
+		timeRegistered
 		user {
-			name
+			id
 			username
 		}
-		published_at
-  }
+	}
 }
