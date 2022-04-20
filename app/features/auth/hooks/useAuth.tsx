@@ -20,6 +20,7 @@ import { useRouter } from 'next/router';
           maxAge: 86400,
           path: '/',
         })
+        
         router.push('/admin/dashboard')
 
         toast.success('Autenticado com sucesso!', {
@@ -42,7 +43,7 @@ import { useRouter } from 'next/router';
             progress: undefined,
             });
         }
-      },[login])
+      },[login, router])
 
       const logout = useCallback(() => {
         destroyCookie(null, '@AuthRegisterTokenhToken')
