@@ -1,7 +1,6 @@
 import { Box, Button, Flex } from "@chakra-ui/react"
 import { SubmitHandler } from "@unform/core"
 import { Form } from "@unform/web"
-import { colors } from "../../../common/theme/colors"
 import InputField from "../../molecules/InputField"
 
 type LoginFormProps = {
@@ -23,14 +22,14 @@ const LoginForm = ({ onSubmit }: LoginFormProps) => {
         alignItems="center"
         
       >
-        <Box bg={colors.white} padding={35} borderRadius={40} w="100%" maxW="420px">
+        <Box bg="white" padding={35} borderRadius={40} w="100%" maxW="420px">
           <Form onSubmit={onSubmit}>
             <InputField name="login" label="Login" mb="35px"/>
             <InputField name="password" label="Senha" type="password" mb="44px"/>
             <Button 
               type="submit" 
-              bg={colors.primary} 
-              color={colors.white} 
+              bg="primary" 
+              color="white"
               borderRadius="none"
               fontSize="24px"
               fontWeight="900"

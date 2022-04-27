@@ -1,7 +1,6 @@
 import React, { useRef, useEffect, useState, useCallback } from "react";
 import { useField } from "@unform/core";
 import { FormControl, FormLabel, Input, InputProps } from "@chakra-ui/react";
-import { colors } from "../../../common/theme/colors";
 
 type InputFieldProps = {
   name: string;
@@ -36,8 +35,8 @@ const InputField = ({ name, label, ...rest }: InputFieldProps) => {
       {label && <FormLabel fontSize={18}>{label}</FormLabel>}
 
       <Input
-        background={colors.grey[50]}
-        color={colors.grey[200]}
+        background="grey.50"
+        color="grey.200"
         borderRadius="none"
         border="none"
         w="100%"
