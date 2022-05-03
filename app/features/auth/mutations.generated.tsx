@@ -9,13 +9,20 @@ export type LoginMutationVariables = Types.Exact<{
 }>;
 
 
-export type LoginMutation = { __typename?: 'Mutation', login: { __typename?: 'UsersPermissionsLoginPayload', jwt?: string | null | undefined } };
+export type LoginMutation = { __typename?: 'Mutation', login: { __typename?: 'UsersPermissionsLoginPayload', jwt?: string | null | undefined, user: { __typename?: 'UsersPermissionsMe', id: string, username: string, role?: { __typename?: 'UsersPermissionsMeRole', type?: string | null | undefined } | null | undefined } } };
 
 
 export const LoginDocument = gql`
     mutation login($identifier: String!, $password: String!) {
   login(input: {identifier: $identifier, password: $password}) {
     jwt
+    user {
+      id
+      username
+      role {
+        type
+      }
+    }
   }
 }
     `;
