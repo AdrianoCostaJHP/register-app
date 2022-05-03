@@ -17,16 +17,4 @@ const Home: NextPage = () => {
   )
 }
 
-// export const getServerSideProps = (req: NextRequest) => {
-//   console.log('req', req.cookies);
-
-//   if(req?.cookies['@reference:authToken']) {
-//     return NextResponse.rewrite('/admin/dashboard')
-//   }
-
-//   return {
-//     props: {}
-//   }
-// }
-
 export default Home
