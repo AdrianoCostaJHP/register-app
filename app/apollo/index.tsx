@@ -6,20 +6,30 @@ import {
   createHttpLink,
 } from "@apollo/client";
 import { parseCookies } from "nookies";
+import { setContext } from '@apollo/client/link/context'
 
-const tokens = parseCookies();
-const token = tokens['@AuthRegisterToken']
+const setAuthorizationLink = setContext(() => {
+  const tokens = parseCookies();
+  const token = tokens['@AuthRegisterToken']
+  if (token) {
+    return {
+      headers: {
+        authorization: 'Bearer ' + token,
+      },
+    }
+  }
+  return {}
+})
+
+
 
 const httpLink = createHttpLink({
   uri: process.env.NEXT_PUBLIC_API_URL,
   fetch: fetch,
-  headers: token ? {
-    authorization: `Bearer ${token}`,
-  }: {},
 });
 
 const client = new ApolloClient({
-  link: httpLink,
+  link: setAuthorizationLink.concat(httpLink),
   ssrMode: !process.browser,
   cache: new InMemoryCache(),
 });
