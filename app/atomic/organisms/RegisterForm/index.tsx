@@ -43,7 +43,7 @@ export const RegisterForm = ({
               fontFamily="Montserrat"
               fontSize="md"
               fontWeight="light"
-              color="secondary"
+              color="text.grey.200"
             >
               Novo Registro
             </Text>
@@ -53,7 +53,7 @@ export const RegisterForm = ({
               <Box>
                 <Text
                   fontFamily="Montserrat"
-                  color="secondary"
+                  color="text.grey.200"
                   fontWeight="normal"
                   fontSize="0.9rem"
                 >
@@ -61,7 +61,7 @@ export const RegisterForm = ({
                 </Text>
                 <Text
                   fontFamily="Montserrat"
-                  color="secondary"
+                  color="text.grey.200"
                   fontWeight="light"
                   fontSize="2xl"
                   marginTop="0.3rem"
@@ -72,7 +72,7 @@ export const RegisterForm = ({
               <Box>
                 <Text
                   fontFamily="Montserrat"
-                  color="secondary"
+                  color="text.grey.200"
                   fontWeight="normal"
                   fontSize="0.9rem"
                   marginBottom="0.8rem"
@@ -119,7 +119,7 @@ export const RegisterForm = ({
                   fontFamily="Montserrat"
                   fontWeight="black"
                   fontSize="lg"
-                  color="white"
+                  color="text.white"
                 >
                   Salvar
                 </Text>
@@ -137,7 +137,7 @@ export const RegisterForm = ({
                   fontFamily="Montserrat"
                   fontWeight="black"
                   fontSize="lg"
-                  color="primary"
+                  color="text.primary"
                 >
                   Cancelar
                 </Text>
