@@ -16,10 +16,15 @@
     "paths": {
       "@libs/*": ["./app/libs/*"],
       "@app/*": ["./app/*"],
-      "@assets/*": ["./public/assets/*"],
+      "@assets/*": ["./public/assets/*"]
     },
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "app/features/auth/hooks/useAuth.tss"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "app/features/auth/hooks/useAuth.tss"
+  ],
   "exclude": ["node_modules"]
 }

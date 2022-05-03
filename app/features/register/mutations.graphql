@@ -1,0 +1,7 @@
+mutation createRegisteredTime($data: RegisteredTimeInput) {
+  createRegisteredTime(input:{ data: $data }){
+    registeredTime {
+      id
+    }
+  }
+}

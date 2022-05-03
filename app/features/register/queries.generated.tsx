@@ -3,22 +3,29 @@ import * as Types from '../../generated/graphql';
 import { gql } from '@apollo/client';
 import * as Apollo from '@apollo/client';
 const defaultOptions =  {}
-export type GetRegisteredTimesQueryVariables = Types.Exact<{ [key: string]: never; }>;
+export type GetRegisteredTimesQueryVariables = Types.Exact<{
+  filter?: Types.InputMaybe<Types.Scalars['JSON']>;
+  sort?: Types.InputMaybe<Types.Scalars['String']>;
+}>;
 
 
-export type GetRegisteredTimesQuery = { __typename?: 'Query', registeredTimes?: Array<{ __typename?: 'RegisteredTime', id: string, timeRegistered?: any | null | undefined, published_at?: any | null | undefined, user?: { __typename?: 'UsersPermissionsUser', name?: string | null | undefined, username: string } | null | undefined } | null | undefined> | null | undefined };
+export type GetRegisteredTimesQuery = { __typename?: 'Query', registeredTimes?: Array<{ __typename?: 'RegisteredTime', id: string, created_at: any, timeRegistered?: any | null | undefined, user?: { __typename?: 'UsersPermissionsUser', id: string, username: string, name?: string | null | undefined, role?: { __typename?: 'UsersPermissionsRole', type?: string | null | undefined } | null | undefined } | null | undefined } | null | undefined> | null | undefined };
 
 
 export const GetRegisteredTimesDocument = gql`
-    query getRegisteredTimes {
-  registeredTimes {
+    query getRegisteredTimes($filter: JSON, $sort: String) {
+  registeredTimes(where: $filter, sort: $sort) {
     id
+    created_at
     timeRegistered
     user {
-      name
+      id
       username
+      name
+      role {
+        type
+      }
     }
-    published_at
   }
 }
     `;
@@ -35,6 +42,8 @@ export const GetRegisteredTimesDocument = gql`
  * @example
  * const { data, loading, error } = useGetRegisteredTimesQuery({
  *   variables: {
+ *      filter: // value for 'filter'
+ *      sort: // value for 'sort'
  *   },
  * });
  */

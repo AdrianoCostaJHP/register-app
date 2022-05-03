@@ -1,11 +1,15 @@
-query getRegisteredTimes {
-  registeredTimes{
-    id
-    timeRegistered
+query getRegisteredTimes($filter: JSON, $sort:String){
+	registeredTimes(where:$filter, sort: $sort){
+		id
+		created_at
+		timeRegistered
 		user {
-			name
+			id
 			username
+			name
+			role {
+				type
+			}
 		}
-		published_at
-  }
+	}
 }

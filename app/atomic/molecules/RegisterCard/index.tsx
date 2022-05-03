@@ -1,19 +1,21 @@
+import { useThemeContext } from "@app/common/theme/themeContext";
 import { Box, Flex, FlexProps, Text } from "@chakra-ui/react"
 import React from "react"
 
 type RegisterCardProps = {
-  name: string;
+  name?: string | null;
   date: string
   time: string
   index: number
 } & FlexProps
 
 export const RegisterCard = ({name, date, time, index, ...props}:RegisterCardProps) => {
+  const { theme } = useThemeContext()
   return (
     <Flex 
       borderRadius="15px" 
       padding="0.8rem 1.5rem" 
-      bg="white" 
+      bg={ theme === "dark" ? "darkGrey" : "white"}
       boxShadow=" 0px 0px 12px 0px rgba(0, 0, 0, 0.1)"
       {...props}
       css={{
@@ -37,6 +39,7 @@ export const RegisterCard = ({name, date, time, index, ...props}:RegisterCardPro
             fontWeight="regular" 
             lineHeight="2rem"
             textAlign="unset"
+            color="text.grey.200"
           >
             {name}
           </Text>
@@ -44,15 +47,16 @@ export const RegisterCard = ({name, date, time, index, ...props}:RegisterCardPro
             fontSize="11px" 
             fontWeight="regular" 
             lineHeight="1rem"
+            color="text.grey.200"
           >
-            {("00"+index).slice(-3)}
+            {("00"+ index ).slice(-3)}
           </Text>
         </Box>
         <Box>
-          <Text fontSize="xl" fontWeight="regular" color="grey.150">{date}</Text>
+          <Text fontSize="xl" fontWeight="regular" color="text.grey.100">{date}</Text>
         </Box>
         <Box>
-          <Text fontSize="2.5rem" fontWeight="bold" color="grey.150" lineHeight="3rem">{time}</Text>
+          <Text fontSize="2.5rem" fontWeight="bold" color="text.grey.100" lineHeight="3rem">{time}</Text>
         </Box>
       </Flex>
     </Flex>
