@@ -1,37 +1,43 @@
 import { api } from "@app/common/services/api";
 import { parseCookies } from "nookies";
-import { createContext, useContext, useEffect, useState } from "react";
+import {
+  createContext,
+  Dispatch,
+  SetStateAction,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 import {
   GetMeQuery,
-  GetMeQueryResult,
-  useGetMeQuery,
 } from "../queries.generated";
 
 export type AuthContextProps = {
   user: GetMeQuery;
-  token: string | undefined;
+  setUser: Dispatch<SetStateAction<any>>;
+  token: string;
+  setToken: Dispatch<SetStateAction<string>>;
 };
 
 export const AuthContext = createContext({} as AuthContextProps);
 
 const AuthProvider: React.FC = ({ children }) => {
   const [user, setUser] = useState<GetMeQuery>({});
-  const [token, setToken] = useState<string | undefined>();
-
+  const [token, setToken] = useState<string>("");
+  
   useEffect(() => {
     const tokens = parseCookies();
     const authToken = tokens["@AuthRegisterToken"];
-    authToken && setToken(authToken);
-  }, [token]);
+    if (authToken) {
+      setToken(authToken);
+    }
+  }, []);
 
   useEffect(() => {
-    console.log(token);
-
-    const authUser = localStorage.getItem("@register_authUser");
-
-    const getUserAuth = async () => {
+    if(token.length !== 0) {
       try {
-        const { data } = await api.post(
+        api
+        .post(
           "",
           {
             operationName: "getMe",
@@ -42,22 +48,22 @@ const AuthProvider: React.FC = ({ children }) => {
               authorization: `Bearer ${token}`,
             },
           }
-        );
-        console.log(data);
-        data && setUser(data?.data)
-      } catch (error) {}
-
-    };
-
-    token && getUserAuth();
-
+        )
+        .then((response) => setUser(response?.data?.data))
+        .catch((error) => console.log({ error }));
+    } catch (error) {
+      console.log({ error });
+    }
+  }
   }, [token]);
 
   return (
     <AuthContext.Provider
       value={{
         user,
+        setUser,
         token,
+        setToken,
       }}
     >
       {children}
