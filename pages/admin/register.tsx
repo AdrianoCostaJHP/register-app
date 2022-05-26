@@ -69,16 +69,15 @@ const Register = () => {
       <RegisterForm isOpen={isOpen} onClose={onClose} onSubmit={onSubmit} />
       <Flex
         w="100%"
-        padding="2.5rem 9rem 6rem"
         direction="column"
-        justifyContent="flex-start"
+        justifyContent="center"
         alignItems="center"
       >
         {loading ? (
           <Spinner color="primary" size="md" />
         ) : (
           <>
-            <Flex w="80%" marginBottom="2rem" justifyContent="flex-end">
+            <Flex w="80%" justifyContent="flex-end">
               <Button
                 height="4rem"
                 padding="1rem 1.5rem"

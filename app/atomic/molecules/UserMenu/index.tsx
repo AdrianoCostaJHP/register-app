@@ -3,11 +3,8 @@ import { useThemeContext } from "@app/common/theme/themeContext";
 import { useAuthContext } from "@app/features/auth/context/authContext";
 import {
   Avatar,
-  Flex,
   Box,
   Text,
-  useDisclosure,
-  Switch,
   TextProps,
   FlexProps,
   Popover,
@@ -20,17 +17,15 @@ import CustomSwitch from "../CustomSwitch";
 const UserMenu = () => {
   const { user } = useAuthContext();
   const { alterTheme, theme } = useThemeContext();
-  const { isOpen, onToggle } = useDisclosure();
 
   return (
-    <Flex {...containerMenu}>
-      <Popover>
+    <Box position="absolute" top="5%" right="5%">
+      <Popover strategy="fixed">
         <PopoverTrigger>
           <Avatar
             name={user?.me?.username}
             size="md"
             src="/assets/default_avatar.svg"
-            position="relative"
             cursor="pointer"
           />
         </PopoverTrigger>
@@ -52,33 +47,26 @@ const UserMenu = () => {
           </PopoverBody>
         </PopoverContent>
       </Popover>
-    </Flex>
+      </Box>
   );
 };
 export default UserMenu;
 
-const containerMenu = {
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  position: "absolute",
-  top: "5%",
-  right: "5%",
-} as FlexProps;
 
 const content = (isDark: boolean) => {
   return {
-    height: "240px",
     display: "flex",
     flexDir: "column",
     justifyContent: "space-evenly",
     alignItems: "center",
     overflow: "hidden",
     borderRadius: 12,
+    rowGap:"2rem",
     boxShadow: "3px 4px 17px 0px rgba(0, 0, 0, 0.1)",
     bg: isDark ? "darkGrey" : "white",
     transition: "ease-linear .3s",
     padding: "2rem 1rem",
+    zIndex: 10
   } as FlexProps;
 };
 

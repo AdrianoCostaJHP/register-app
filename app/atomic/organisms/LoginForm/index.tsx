@@ -13,16 +13,16 @@ const LoginForm = ({ onSubmit }: LoginFormProps) => {
     <Flex flex={1}>
       <Flex 
         w="100%"
-        h="100%"
+        h="90%"
         backgroundImage="url(/assets/bg_form.svg)"
         backgroundRepeat="no-repeat" 
-        backgroundPosition="left"
+        backgroundPosition={{ base:"center", md:"center", lg:"left", xl:"left" }}
         backgroundSize="cover"
         justifyContent="center"
         alignItems="center"
         
       >
-        <Box bg="white" padding={35} borderRadius={40} w="100%" maxW="420px">
+        <Box bg="white" padding={35} borderRadius={40} w="90%" maxW="420px">
           <Form onSubmit={onSubmit}>
             <InputField name="login" label="Login" mb="35px"/>
             <InputField name="password" label="Senha" type="password" mb="44px"/>

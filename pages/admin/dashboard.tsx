@@ -8,7 +8,7 @@ const Dashboard = () => {
 
   return (
     <AdminTemplate>
-      <Flex w="100%" padding="6rem 9rem" justifyContent="center">
+      <Flex w="100%" justifyContent="center" alignItems="center">
         {!data && loading ? (
           <Spinner color="primary" size="md" />
         ) : (
