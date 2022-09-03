@@ -36,9 +36,9 @@ export const RegisterCard = ({
       <Flex
         w="100%"
         marginLeft={{ base: "2rem", md: "5rem" }}
-        flexWrap="wrap"
         justifyContent="space-between"
-        alignItems="center"
+        flexDirection={{base:"column", md: "row"}}
+        alignItems={{base:"left", md: "center"}}
       >
         <Box>
           <Text

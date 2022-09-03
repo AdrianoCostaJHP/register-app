@@ -3,7 +3,14 @@ import AdminTemplate from "@app/atomic/templates/AdminTemplate";
 import { useAuthContext } from "@app/features/auth/context/authContext";
 import { RegisterForm } from "@app/atomic/organisms/RegisterForm";
 import { useCreateRegisteredTimeMutation } from "@app/features/register/mutations.generated";
-import { Button, Flex, Spinner, Text, useDisclosure } from "@chakra-ui/react";
+import {
+  Button,
+  Flex,
+  Spinner,
+  Text,
+  useDisclosure,
+  ButtonProps,
+} from "@chakra-ui/react";
 import { format } from "date-fns";
 import { useCallback } from "react";
 import { toast } from "react-toastify";
@@ -16,14 +23,13 @@ const Register = () => {
   const [createRegisteredTime] = useCreateRegisteredTimeMutation();
   const { data, loading } = useGetRegisteredTimesQuery({
     variables: {
-      filter:{
+      filter: {
         user: {
           id: user?.me?.id,
         },
       },
     },
   });
-
 
   const onSubmit = useCallback(
     async (values) => {
@@ -78,23 +84,7 @@ const Register = () => {
         ) : (
           <>
             <Flex w="80%" justifyContent="flex-end">
-              <Button
-                height="4rem"
-                padding="1rem 1.5rem"
-                borderRadius="none"
-                onClick={onToggle}
-                _hover={{}}
-                bg="primary"
-              >
-                <Text
-                  fontFamily="Montserrat"
-                  fontSize="xl"
-                  fontWeight="black"
-                  color="text.white"
-                >
-                  Registrar
-                </Text>
-              </Button>
+              <Button {...buttonContainer} onClick={onToggle} />
             </Flex>
             <RegisterList data={data} />
           </>
@@ -103,5 +93,31 @@ const Register = () => {
     </AdminTemplate>
   );
 };
+
+const buttonContainer = {
+  w: "3rem",
+  h: "3rem",
+  bg: "primary",
+  borderRadius: "50%",
+  position: "absolute",
+  bottom: "5%",
+  right: "5%",
+  _after:{
+    content:'" "',
+    w: "0.2rem",
+    h:"50%",
+    borderRadius: 12,
+    bg: "white",
+    transform: "rotate(90deg)",
+  },
+  _before:{
+    content:'" "',
+    w: "0.2rem",
+    h:"50%",
+    borderRadius: 12,
+    bg: "white",
+    transform: "rotate(-90deg)",
+  }
+} as ButtonProps;
 
 export default Register;
