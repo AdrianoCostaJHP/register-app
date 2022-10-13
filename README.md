@@ -4,13 +4,14 @@
 <br>
 </h1>
 
-<p align = "center"> Um sistema para o gerenciamento de Registros de Ponto dos colaboradores :) </p>
+<p align = "center"> Aplicação para o gerenciamento de registros de ponto dos colaboradores :) </p>
 
-<p align = "center">
-  <a href="https://opensource.org/licenses/MIT">
-    <img src = "https://img.shields.io/badge/License-MIT-blue.svg" alt = "Licença MIT">
-  </a>
+<p align="center">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/AdrianoCostaJHP/register-app?color=#39E991">
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/AdrianoCostaJHP/register-app?color=#39E991">
+  <img alt="GitHub" src="https://img.shields.io/github/license/AdrianoCostaJHP/register-app?color=#39E991"
 </p>
+ <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/adrianocostaJHP/register-app?style=social"/>
 
 <hr />
 
