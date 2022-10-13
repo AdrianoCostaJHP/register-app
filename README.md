@@ -1,6 +1,6 @@
 <h1 align = "center">
 <br>
-  <img src = "public/assets/bg_register.svg" alt = "Register" width = "250">
+  <img src = "public/assets/bg_dark.png" alt = "Register">
 <br>
 </h1>
 
@@ -17,6 +17,27 @@
 
 ## :rocket: Tecnologias
 [//]: # (Adicione os recursos do seu projeto aqui :)
+
+<div style="display: inline_block"><br>
+  <a href="https://pt-br.reactjs.org/" target="_blank">
+    <img align="center" alt="React" height="40" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg">
+  </a>
+  <a href="https://nextjs.org/" target="_blank">
+    <img align="center" alt="Js" height="40" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nextjs/nextjs-original-wordmark.svg">
+  </a>
+  <a href="https://graphql.org/" target="_blank">
+    <img align="center" alt="GRAPHQL" height="40" width="40" src="https://github.com/devicons/devicon/blob/master/icons/graphql/graphql-plain.svg">
+  </a>
+  <a href="https://www.typescriptlang.org/" target="_blank">
+    <img align="center" alt="Typescript" height="40" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-plain.svg">
+  </a>
+  <a href="https://chakra-ui.com/" target="_blank">
+    <img align="center"alt="Chakra UI" height="40" width="40" src="public/assets/chakra-icon.svg" />
+  </a>
+          
+  
+ 
+</div>
 
 - ReactJS
 - NextJS
@@ -48,7 +69,7 @@ $ yarn dev
 
 ## :page_facing_up: Licença
 
-Este projeto está licenciado sob a Licença MIT - consulte a página [LICENÇA](https://opensource.org/licenses/MIT) para obter detalhes.
+Este projeto está licenciado sob a Licença MIT
 
 ---
 
