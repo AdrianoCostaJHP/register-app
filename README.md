@@ -18,33 +18,25 @@
 ## :rocket: Tecnologias
 [//]: # (Adicione os recursos do seu projeto aqui :)
 
-<div style="display: inline_block"><br>
+<div>
+  <br>
   <a href="https://pt-br.reactjs.org/" target="_blank">
-    <img align="center" alt="React" height="40" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg">
+    <img align="center" alt="React" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg">
   </a>
-  <a href="https://nextjs.org/" target="_blank">
-    <img align="center" alt="Js" height="40" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nextjs/nextjs-original-wordmark.svg">
+  <a href="https://nextjs.org/" target="_blank" >
+    <img align="center" alt="NextJS" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" />
   </a>
   <a href="https://graphql.org/" target="_blank">
-    <img align="center" alt="GRAPHQL" height="40" width="40" src="https://github.com/devicons/devicon/blob/master/icons/graphql/graphql-plain.svg">
+    <img align="center" alt="GRAPHQL" height="30" width="40" src="https://github.com/devicons/devicon/blob/master/icons/graphql/graphql-plain.svg">
   </a>
   <a href="https://www.typescriptlang.org/" target="_blank">
-    <img align="center" alt="Typescript" height="40" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-plain.svg">
+    <img align="center" alt="Typescript" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-plain.svg">
   </a>
   <a href="https://chakra-ui.com/" target="_blank">
-    <img align="center"alt="Chakra UI" height="40" width="40" src="public/assets/chakra-icon.svg" />
+    <img align="center"alt="Chakra UI" height="30" width="40" src="public/assets/chakra-icon.svg" />
   </a>
-          
-  
- 
+  <br>        
 </div>
-
-- ReactJS
-- NextJS
-- Apollo Client 
-- GraphQL
-- Typescript 
-- Chakra UI
 
 
 
